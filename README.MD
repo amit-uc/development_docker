@@ -1,0 +1,1 @@
+docker run -it -p 9876:9876 -v /home/amit/workspace/docker_dev/webapp:/app test_api /bin/sh
