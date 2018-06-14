@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30021
+  type: NodePort
+  selector:
+    module: php-server
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-php-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      module: php-server
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        module: php-server
+    spec:
+      containers:
+      - image: test_php:latest
+        imagePullPolicy: IfNotPresent
+        name: container-php-server
+        ports:
+        - containerPort: 80
+

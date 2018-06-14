@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<?php 
-			$json = file_get_contents('http://192.168.1.61:9876/product');
+			$json = file_get_contents('http://service-api:9876/product');
 			echo "<h3>Products</h3>";
 			$obj = json_decode($json);
 			

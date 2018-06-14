@@ -15,7 +15,8 @@ def get_product():
 					'Kachori',
 					'lassi',
 					'Pizza',
-					'Shev Puri'
+					'Shev Puri',
+					"North Indian Thali"
 				]
 			})
 

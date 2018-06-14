@@ -7,3 +7,5 @@ WORKDIR /app/
 ADD requirements.txt /app/requirements.txt
 
 RUN pip3 install -r requirements.txt
+
+ADD api.py /app/api.py

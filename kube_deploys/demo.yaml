@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-api
+spec:
+  ports:
+    - port: 9876
+  clusterIP: None
+  type: ClusterIP
+  selector:
+    module: flask-api
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      module: flask-api
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        module: flask-api
+    spec:
+      containers:
+      - image: test_api:latest
+        imagePullPolicy: IfNotPresent
+        name: container-flask
+        command: ["python3", "/app/api.py"]
+        ports:
+        - containerPort: 9876
+
