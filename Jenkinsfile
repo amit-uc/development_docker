@@ -50,4 +50,5 @@ pipeline {
                 subject: 'Deploy Failed', to: 'amithapa1994@gmail.com'
         
         }
+    }
 }
