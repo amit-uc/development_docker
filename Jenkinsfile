@@ -1,8 +1,8 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'webapp', defaultValue: 'v_1.1', description: 'Webapp Docker Version')
-        string(name: 'render_php', defaultValue: 'v_1.12', description: 'render_php Docker Version')
+        string(name: 'WEBAPP', defaultValue: 'v_1.1', description: 'Webapp Docker Version')
+        string(name: 'RENDER_PHP', defaultValue: 'v_1.12', description: 'render_php Docker Version')
     }
     
     stages {   
@@ -15,8 +15,8 @@ pipeline {
         
         stage('Build and Test') {
             steps {
-                sh 'sudo docker build -t amithapa/my_webapp:${params.webapp} webapp/'
-                sh 'sudo docker build -t amithapa/my_frontend:${params.render_php} render_php/'
+                sh 'sudo docker build -t amithapa/my_webapp:${params.WEBAPP} webapp/'
+                sh 'sudo docker build -t amithapa/my_frontend:${params.RENDER_PHP} render_php/'
             }
         }
         
