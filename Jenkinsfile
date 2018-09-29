@@ -4,7 +4,7 @@ pipeline {
         stage('git pull') {
             steps {
                 git branch: 'staging', url: 'git@github.com:bunnydev26/development_docker.git'
-                adada
+                
             }
         }
         
