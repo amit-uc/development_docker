@@ -11,7 +11,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 sh 'sudo docker build -t amithapa/my_webapp:v_1.0 webapp/'
-                sh 'sudo docker build -t amithapa/my_frontend:v_1.0 render_php/'
+                sh 'sudo docker build -t amithapa/my_frontend:v_1.0 render_phpp/'
             }
         }
         
