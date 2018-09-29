@@ -10,7 +10,8 @@ pipeline {
         
         stage('Build and Test') {
             steps {
-                sh 'sudo docker build -t amithapa/my_webapp:v_1.0 webapp/'
+                properties([parameters([string(defaultValue: 'v_1.0', description: '', name: 'webapp_version', trim: false)])])
+                sh 'sudo docker build -t amithapa/my_webapp:$webapp_version webapp/'
                 sh 'sudo docker build -t amithapa/my_frontend:v_1.0 render_phpp/'
             }
         }
