@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters {
-        string(name: 'webapp', defaultValue: 'v_1.1', description: 'Webapp Docker Version'),
+        string(name: 'webapp', defaultValue: 'v_1.1', description: 'Webapp Docker Version')
         string(name: 'render_php', defaultValue: 'v_1.12', description: 'render_php Docker Version')
     }
     
