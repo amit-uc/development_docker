@@ -4,7 +4,7 @@ pipeline {
         stage('git pull') {
             steps {
                 git branch: 'staging', url: 'git@github.com:bunnydev26/development_docker.git'
-        
+                adada
             }
         }
         
@@ -37,4 +37,17 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo "Merge Code to master"
+
+            emailext body: '''Deployment is successfully completed''', 
+                subject: 'Deploy Completed', to: 'amithapa1994@gmail.com'
+        }
+        failure {
+            
+            emailext body: '''Deployment has failed kindly check Jenkins''', 
+                subject: 'Deploy Failed', to: 'amithapa1994@gmail.com'
+        
+        }
 }
