@@ -8,15 +8,9 @@ pipeline {
             }
         }
         
-        stage('build') {
+        stage('Build and Test') {
             steps {
                 sh 'sudo docker build -t amithapa/my_webapp:v_1.0 webapp/'
-        
-            }
-        }
-        
-        stage('test') {
-            steps {
                 sh 'sudo docker build -t amithapa/my_frontend:v_1.0 render_php/'
             }
         }
