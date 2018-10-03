@@ -1,0 +1,7 @@
+{
+  "application_name": "demo",
+  "module_name": "webapp",
+  "major_version": "1",
+  "docker_context": "webapp/",
+  "docker_file": "webapp/Dockerfile"
+}
